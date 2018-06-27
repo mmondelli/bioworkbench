@@ -104,7 +104,6 @@ ENV PATH "$PATH":/${SWIFT_GECKO}/bin:.:
 RUN cd /root; git clone https://github.com/mmondelli/rasflow.git
 ENV RASFLOW /root/rasflow
 ENV PATH "$PATH":/${RASFLOW}/bin:.:
-RUN mv /root/rasflow/workbench /srv/shiny-server/
 
 # TABIX E BGZIP ====
 
@@ -161,6 +160,7 @@ RUN wget https://zenodo.org/record/1242591/files/swift_provenance.db.gz
 RUN mv swift_provenance.db.gz /srv/shiny-server/workbench/swift_provenance.db.gz
 RUN gunzip /srv/shiny-server/workbench/swift_provenance.db.gz
 
+COPY workbench /srv/shiny-server/
 RUN chmod 777 /usr/bin/shiny-server.sh
 RUN ln -s /srv/shiny-server/workbench/swift_provenance.db swift_provenance.db
 
