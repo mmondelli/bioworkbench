@@ -267,7 +267,7 @@ if importProv:
                 globusOnlineClient=config.value.strip("\"")
 
     homeDirectory = os.path.expanduser('~')
-    sqliteDBFile = homeDirectory + "/srv/shiny-server/workbench/swift_provenance.db"
+    sqliteDBFile = "/srv/shiny-server/workbench/swift_provenance.db"
 
     print "Provenance import: checking if database exists"
 
