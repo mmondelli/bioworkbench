@@ -149,10 +149,10 @@ EXPOSE 3838
 
 COPY util/shiny-server.sh /usr/bin/shiny-server.sh
 
-RUN wget https://zenodo.org/record/1303382/files/swift_provenance.db.gz
+#RUN wget https://zenodo.org/record/1303382/files/swift_provenance.db.gz
 #https://zenodo.org/record/1242591/files/swift_provenance.db.gz
-RUN mv /root/swift_provenance.db.gz /srv/shiny-server/workbench/swift_provenance.db.gz
-RUN gunzip /srv/shiny-server/workbench/swift_provenance.db.gz
+#RUN mv /root/swift_provenance.db.gz /srv/shiny-server/workbench/swift_provenance.db.gz
+#RUN gunzip /srv/shiny-server/workbench/swift_provenance.db.gz
 
 COPY workbench /srv/shiny-server/
 RUN chmod 777 /usr/bin/shiny-server.sh
