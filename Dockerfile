@@ -154,11 +154,14 @@ COPY util/shiny-server.sh /usr/bin/shiny-server.sh
 #RUN mv /root/swift_provenance.db.gz /srv/shiny-server/workbench/swift_provenance.db.gz
 #RUN gunzip /srv/shiny-server/workbench/swift_provenance.db.gz
 
+RUN cd /srv/shiny-server/ && \
+    mkdir workbench
 COPY workbench /srv/shiny-server/
 RUN chmod 777 /usr/bin/shiny-server.sh
 RUN ln -s /srv/shiny-server/workbench/swift_provenance.db swift_provenance.db
 
-RUN mkdir MachineLearningExperiments
+RUN cd && \
+    mkdir MachineLearningExperiments
 COPY MachineLearningExperiments /root/MachineLearningExperiments
 
 RUN mkdir util
