@@ -156,7 +156,7 @@ COPY util/shiny-server.sh /usr/bin/shiny-server.sh
 
 RUN cd /srv/shiny-server/ && \
     mkdir workbench
-COPY workbench /srv/shiny-server/
+COPY workbench /srv/shiny-server/workbench
 RUN chmod 777 /usr/bin/shiny-server.sh
 RUN ln -s /srv/shiny-server/workbench/swift_provenance.db swift_provenance.db
 
